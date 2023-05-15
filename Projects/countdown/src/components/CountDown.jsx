@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-
+import style from "./Count.module.css"
 
 const Count=()=>{
 const [check,setCheck]=useState(null);    
@@ -13,9 +13,19 @@ const start=()=>{
         setCount((prev)=> prev-1);
         }
         ,1000)
-        return ()=>{clearInterval(inter)}
+        setCheck(inter);
     }
 
+}
+
+const pause=()=>{
+    clearInterval(check)
+    setCheck(null);
+}
+const reset=()=>{
+    clearInterval(check);
+    setCount(20);
+    setCheck(null);
 }
 
 return(
@@ -23,9 +33,9 @@ return(
       <h2>Count Down </h2>
       <h1>{count}</h1>
       <div>
-        <button onClick={start}> Start </button>
-        <button> Pause </button>
-        <button> Reset </button>
+        <button className={style.buttons}  onClick={start}> Start </button>
+        <button className={style.buttons} onClick={pause}> Pause </button>
+        <button className={style.buttons} onClick={reset}> Reset </button>
       </div>
 
 

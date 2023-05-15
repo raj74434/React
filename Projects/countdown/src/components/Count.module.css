@@ -1,0 +1,11 @@
+
+.buttons{
+border-radius: 20%;
+text-align: center;
+font-size: 30px;
+margin-right: 20px;
+padding: 15px 10px 15px 10px;
+}
+.buttons:hover{
+    background-color: gray;
+}
